@@ -5,6 +5,7 @@ import AllNotes from "./AllNotes";
 import NewNote from "./NewNote";
 import EditNote from "./EditNote";
 import "./App.css";
+import Login from "./login";
 
 function App() {
   return (
@@ -29,12 +30,16 @@ function App() {
             <Link to="/newnote" className="navbar-item">
               New Note
             </Link>
+            <Link to="/login" className="navbar-item">
+              Login
+            </Link>
           </div>
         </nav>
 
         <Route exact path="/" component={AllNotes} />
         <Route path="/newnote" component={NewNote} />
         <Route path="/note/:id" component={EditNote} />
+        <Route path="/login" component={Login} />
       </div>
     </Router>
   );

@@ -69,6 +69,7 @@ const NewNote = withRouter(({ history }) => {
                 placeholder="Note Title"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
+                required
               />
             </div>
           </div>
