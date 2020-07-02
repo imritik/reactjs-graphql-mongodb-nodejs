@@ -3,8 +3,8 @@
     color: white;
 }
 
-​ .navbar-item {
-    color: white;
+​.navbar-item {
+    color: white !important;
 }
 
 ​ .App-title {

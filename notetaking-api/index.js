@@ -11,7 +11,7 @@ mongoose.connect("mongodb://localhost/notetaking_db", {
 });
 
 const app = express();
-const PORT = 3001;
+const PORT = 4003;
 
 app.use(cors());
 

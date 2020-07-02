@@ -6,11 +6,21 @@ import NewNote from "./NewNote";
 import EditNote from "./EditNote";
 import "./App.css";
 import Login from "./login";
-const loggedin = localStorage.getItem("token");
 function App() {
   function logout() {
     localStorage.clear();
     // this.props.history.push(`/login`);
+  }
+  function getemail() {
+    const loggedin = localStorage.getItem("token");
+    if (loggedin == null) {
+      console.log("logged out");
+      return true;
+    } else {
+      console.log("logged in");
+
+      return false;
+    }
   }
   return (
     <Router>
@@ -27,19 +37,22 @@ function App() {
           </div>
 
           <div className="navbar-end">
-            <Link to="/" className="navbar-item">
-              All Notes
-            </Link>
-
-            <Link to="/newnote" className="navbar-item">
-              New Note
-            </Link>
-            {!loggedin && (
+            {!getemail() && (
+              <Link to="/" className="navbar-item">
+                All Notes
+              </Link>
+            )}
+            {!getemail() && (
+              <Link to="/newnote" className="navbar-item">
+                New Note
+              </Link>
+            )}
+            {getemail() && (
               <Link to="/login" className="navbar-item">
                 Login
               </Link>
             )}
-            {loggedin && (
+            {!getemail() && (
               <button className="navbar-item" onClick={logout}>
                 Logout
               </button>
