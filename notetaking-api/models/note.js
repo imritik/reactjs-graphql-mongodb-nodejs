@@ -12,6 +12,10 @@ const NoteSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    email: {
+        type: String,
+        required: true
     }
 });
 export default mongoose.model('note', NoteSchema);

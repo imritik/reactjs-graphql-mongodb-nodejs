@@ -3,9 +3,10 @@ import { withRouter } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
+var email = localStorage.getItem("token");
 const NEW_NOTE = gql`
-  mutation createNote($title: String!, $content: String!) {
-    createNote(input: { title: $title, content: $content }) {
+  mutation createNote($title: String!, $content: String!, $email: String!) {
+    createNote(input: { title: $title, content: $content, email: $email }) {
       _id
       title
       content
@@ -53,7 +54,8 @@ const NewNote = withRouter(({ history }) => {
               variables: {
                 title,
                 content,
-                date: Date.now()
+                date: Date.now(),
+                email
               }
             });
             history.push("/");

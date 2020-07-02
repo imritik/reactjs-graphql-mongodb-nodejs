@@ -22,10 +22,12 @@ type User {
 input NoteInput {
   title: String!
   content: String!
+  email:String!
  }
   input NoteUpdateInput {
   title: String
   content: String
+  email:String
  }
 type Mutation {
   createNote(input: NoteInput) : Note

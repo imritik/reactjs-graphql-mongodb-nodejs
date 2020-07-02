@@ -6,8 +6,12 @@ import NewNote from "./NewNote";
 import EditNote from "./EditNote";
 import "./App.css";
 import Login from "./login";
-
+const loggedin = localStorage.getItem("token");
 function App() {
+  function logout() {
+    localStorage.clear();
+    // this.props.history.push(`/login`);
+  }
   return (
     <Router>
       <div>
@@ -30,9 +34,16 @@ function App() {
             <Link to="/newnote" className="navbar-item">
               New Note
             </Link>
-            <Link to="/login" className="navbar-item">
-              Login
-            </Link>
+            {!loggedin && (
+              <Link to="/login" className="navbar-item">
+                Login
+              </Link>
+            )}
+            {loggedin && (
+              <button className="navbar-item" onClick={logout}>
+                Logout
+              </button>
+            )}
           </div>
         </nav>
 
