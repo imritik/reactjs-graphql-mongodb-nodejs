@@ -10,7 +10,7 @@ export const resolvers = {
             return await Note.findById(_id);
         },
         async allNotes() {
-            return await Note.find({ email: localStorage.getItem("token") });
+            return await Note.find({ email: "rit@gmail.com" });
         }
     },
     Mutation: {

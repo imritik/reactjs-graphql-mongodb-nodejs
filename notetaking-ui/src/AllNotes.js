@@ -30,12 +30,7 @@ const AllNotes = () => {
   const { loading, error, data } = useQuery(NOTES_QUERY);
 
   const [deleteNote] = useMutation(DELETE_NOTE_QUERY, {
-    update(
-      cache,
-      {
-        data: { deleteNote }
-      }
-    ) {
+    update(cache, { data: { deleteNote } }) {
       const { allNotes } = cache.readQuery({ query: NOTES_QUERY });
       const newNotes = allNotes.filter(note => note._id !== deleteNote._id);
 

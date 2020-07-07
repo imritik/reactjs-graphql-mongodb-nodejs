@@ -5,7 +5,8 @@ type Note {
   _id: ID!
   title: String!,
   date: Date,
-  content: String!
+  content: String!,
+  email:String!
  }
 scalar Date
 type Query {

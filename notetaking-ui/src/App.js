@@ -6,13 +6,15 @@ import NewNote from "./NewNote";
 import EditNote from "./EditNote";
 import "./App.css";
 import Login from "./login";
+import Profile from "./Profile";
+/* global localStorage, */
 function App() {
   function logout() {
     localStorage.clear();
     // this.props.history.push(`/login`);
   }
   function getemail() {
-    const loggedin = localStorage.getItem("token");
+    const loggedin = "rit@gmail.com";
     if (loggedin == null) {
       console.log("logged out");
       return true;
@@ -47,6 +49,11 @@ function App() {
                 New Note
               </Link>
             )}
+            {!getemail() && (
+              <Link to="/profile" className="navbar-item">
+                Profile
+              </Link>
+            )}
             {getemail() && (
               <Link to="/login" className="navbar-item">
                 Login
@@ -64,6 +71,7 @@ function App() {
         <Route path="/newnote" component={NewNote} />
         <Route path="/note/:id" component={EditNote} />
         <Route path="/login" component={Login} />
+        <Route path="/profile" component={Profile} />
       </div>
     </Router>
   );
