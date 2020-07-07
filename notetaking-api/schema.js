@@ -8,14 +8,21 @@ type Note {
   content: String!,
   email:String!
  }
+ type Profile{
+  name:String!
+  email:String!
+  password:String!
+}
 scalar Date
 type Query {
   getNote(_id: ID!): Note
   allNotes: [Note]
+  getProfile:Profile
  }
  type AuthPayload {
   user: User
 }
+
 type User {
   name: String!
   email: String!

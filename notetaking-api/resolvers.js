@@ -11,6 +11,10 @@ export const resolvers = {
         },
         async allNotes() {
             return await Note.find({ email: "rit@gmail.com" });
+        },
+        async getProfile() {
+            // console.log(User.find());
+            return await User.findOne({ email: "rit@gmail.com" });
         }
     },
     Mutation: {
