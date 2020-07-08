@@ -5,6 +5,7 @@ import { ApolloClient } from "apollo-client";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloLink } from "apollo-link";
 import { InMemoryCache } from "apollo-cache-inmemory";
+// import { createUploadLink } from "apollo-upload-client";
 import "./index.css";
 import App from "./App";
 import { onError } from "apollo-link-error";
