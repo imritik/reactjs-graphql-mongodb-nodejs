@@ -51,7 +51,11 @@ export default function WithPreviews(props) {
     <section className="container">
       <div {...getRootProps({ className: "dropzone" })}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some file here, or click to select file</p>
+        <pre style={{ background: "aliceblue" }}>
+          <p>
+            Drag 'n' drop some file here, or click to select file (with preview)
+          </p>
+        </pre>
       </div>
       <aside className="thumb-container">
         {thumbs}
